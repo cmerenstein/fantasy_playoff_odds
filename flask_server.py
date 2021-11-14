@@ -23,5 +23,5 @@ def get_click():
 
   return res
 
-#if __name__ == "__main__":
-#  app.run()
+if __name__ == "__main__":
+  app.run()
