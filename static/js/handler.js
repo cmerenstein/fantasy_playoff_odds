@@ -1,5 +1,6 @@
 
 var b1 = document.getElementById("b1")
+var b2 = document.getElementById("b2")
 var buttons = document.getElementsByClassName("button")
 
 document.onload = reset_table
@@ -7,6 +8,7 @@ document.onload = reset_table
 console.log(buttons)
 
 b1.onclick = read_table
+b2.onclick = reset_table
 
 function submit(picks)  {
 
@@ -75,7 +77,7 @@ function read_table() {
   res = {};
   for (let week = 0; week < 15; week++) {
     week_res = [];
-    for (let game = 0; game < 4; game++) {
+    for (let game = 0; game < 5; game++) {
       team1 = document.getElementById(week+"-"+game+"-1");
       team2 = document.getElementById(week+"-"+game+"-2");
       if (team1.checked) {
@@ -96,11 +98,13 @@ function read_table() {
 }
 
 function reset_table() {
+  console.log("reset")
   for (let week = 0; week < 15; week++) {
     week_res = [];
-    for (let game = 0; game < 4; game++) {
+    for (let game = 0; game < 5; game++) {
       document.getElementById(week+"-"+game+"-1").checked = false;
       document.getElementById(week+"-"+game+"-2").checked = false;
     }
   }
+  read_table()
 }
