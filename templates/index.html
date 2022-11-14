@@ -31,6 +31,23 @@
   font-size: 20px
 }
 
+table,
+td,
+tr {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+
+
+th:last-child,
+td:last-child {
+  border-right-width: 0;
+}
+
+tr:last-child td {
+  border-bottom-width: 0;
+}
+
 </style>
 </head>
 <body>
@@ -38,6 +55,10 @@
 <h1>Yahoo Fantasy playoff odds</h1>
 <div >
 
+  <div class="topline">
+    <h3>Caleb</h3>
+    <p class = "odds" id="Caleb">
+  </div>
   <div class="topline">
     <h3>Simon</h3>
     <p class = "odds" id="Simon">
@@ -49,10 +70,6 @@
   <div class="topline">
     <h3>Traci</h3>
     <p class = "odds" id="Traci">
-  </div>
-  <div class="topline">
-    <h3>Caleb</h3>
-    <p class = "odds" id="Caleb">
   </div>
   <div class="topline">
     <h3>Dan</h3>
@@ -70,11 +87,23 @@
     <h3>Carter</h3>
     <p class = "odds" id="Carter">
   </div>
+  <div class="topline">
+    <h3>Anna</h3>
+    <p class = "odds" id="Anna">
+  </div> 
+  <div class="topline">
+    <h3>Jenni</h3>
+    <p class = "odds" id="Jenni">
+  </div>
 </div>
 
 <button class="button button1" id="b1">Simulate</button>
 
 <h2 class="display" id="clicked"></h2>
+
+<div id="schedule-table">
+{{ schedule_table|safe }}
+</div>
 
 <script src="{{ url_for('static', filename="js/handler.js") }}"></script>
 
